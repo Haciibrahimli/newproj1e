@@ -4,7 +4,10 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
+
     name = models.CharField(max_length=255,verbose_name='cateqoriya adi')
+
+
 
     def __str__(self):
 
@@ -15,29 +18,40 @@ class Category(models.Model):
        verbose_name = 'cateqoriya adi'
        verbose_name_plural = 'cateqoriya adlari'
 
+
+
 class Author(models.Model):
+   
    name = models.CharField(max_length=255,verbose_name='author adi')
 
    def __str__(self):
 
      return self.name
     
+
+
    class Meta:
        ordering = ('name',)
        verbose_name = 'author adi'
        verbose_name_plural = 'author adlari'
 
+
+
 class Keywords(models.Model):
+
     name = models.CharField(max_length=255,verbose_name='tag adi')
 
     def __str__(self):
 
      return self.name
     
+
     class Meta:
        ordering = ('name',)
        verbose_name = 'tag adi'
        verbose_name_plural = 'tag adlari'
+
+
 
 class Book(models.Model):
     name = models.CharField(max_length=255,verbose_name='adi')
